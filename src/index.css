@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: var(--bg-color);
+  overflow-x: hidden !important;
+  font-family: 'Roboto', sans-serif;
+}
+
+.light {
+  --text-color: #fff;
+  --bg-color: linear-gradient(120deg, orange, #ffd890, #b8b8b8);
+  --nav-bg: #1f1f1f;
+  --btn-bg: #474747;
+  --box-bg: #fff;
+  --btn-bg-dark: #6d6d6d;
+  --btn-hover: #df9100;
+  --btn-shadow: #2e2e2e;
+  --mode-bg: #fff;
+  --mode-circle: orange;
+  --bubble-top: #8f8b8b;
+  --bubble-bottom: #ffd890;
+  --cam:#333333;
+  --equal:#df9100;
+}
+
+.highlight-btn{
+  background: var(--equal) !important;
+  color: #0d0d0d;
+}
+
+.dark {
+  --text-color: #e0e0e0;
+  --bg-color: linear-gradient(120deg, #535353, #2e2e2e, #0d0d0d);
+  --nav-bg: #292929;
+  --btn-bg: #3a3a3a;
+  --box-bg: #1f1f1f;
+  --btn-bg-dark: #5a5a5a;
+  --btn-hover: #7a7a7a;
+  --btn-shadow: #141414;
+  --mode-bg: #797979;
+  --mode-circle: #363636;
+  --bubble-top: #0d0d0d;
+  --bubble-bottom: #535353;
+  --cam:#201f1f;
+  --equal:#bdbdbd;
+}
+
+.main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the inner-main horizontally */
+  overflow: hidden;
+}
+.inner-main {
+  position: relative;
+  width: 100%;
+  max-width: 500px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+}
+.inner-main::after {
+  content: "";
+  width: 700px;
+  height: 700px;
+  background: var(--bubble-bottom) !important;
+  position: absolute;
+  top: 300px;
+  right: -150%;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: -1;
+  animation-name: scalingDown;
+  animation-timing-function: ease-in-out;
+  animation-duration: 16s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+.inner-main::before {
+  content: "";
+  width: 700px;
+  height: 700px;
+  background: var(--bubble-top) !important;
+  position: absolute;
+  bottom: 300px;
+  left: -150%;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: -1;
+  animation-name: scalingUp;
+  animation-timing-function: ease-in-out;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+img:hover{
+  scale: 1.1;
+}
+
+@keyframes scalingUp {
+  0%,
+  100% {
+    scale: 1.1;
+  }
+  50% {
+    scale: 0.8;
+  }
+}
+
+@keyframes scalingDown {
+  0%,
+  100% {
+    scale: 0.8;
+  }
+  50% {
+    scale: 1.1;
+  }
+}

@@ -1,0 +1,66 @@
+nav {
+  background-color: var(--nav-bg);
+  color: var(--text-color);
+  padding: 20px 10px;
+  display: flex;
+  justify-content: space-between;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #37ac00;
+  display: inline-block;
+  animation-name: blink;
+  animation-timing-function: ease-in-out;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+@keyframes blink {
+    0%,100%{
+        opacity: 0.2;
+    }
+    50%{
+        opacity: 1;
+    }
+}
+
+.cam{
+    width: 15px;
+    height: 15px;
+    background: var(--cam);
+    border-radius: 50px;
+    position: relative;
+    left: -20px;
+}
+.inner-cam{
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background-color: #0e2207;
+    border-radius: 50px;
+    top: 25%;
+    left: 25%;
+}
+
+@media (max-width: 568px) {
+  nav {
+    padding: 13px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 424px) and (min-width: 320px) {
+  nav {
+    padding: 10px;
+    font-size: 12px;
+  }
+  .cam{
+    left: 0;
+  }
+}
